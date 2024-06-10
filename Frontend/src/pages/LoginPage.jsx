@@ -1,10 +1,9 @@
 import React from 'react'
-import PaperSmithLogo from 'D:/coding/web projects/papersmith/Frontend/src/assets/Logo.svg';
+import PaperSmithLogo from '../assets/Logo.svg';
 import InputBox from '../components/InputBox';
 import AccentButton from '../components/AccentButton';
 import ContinueWithGooglebtn from '../components/ContinueWithGooglebtn';
 import TextftLink from '../components/TextftLink';
-
 
 export default function LoginPage() {
   return (
