@@ -6,8 +6,10 @@ import ContinueWithGooglebtn from '../components/ContinueWithGooglebtn';
 import TextftLink from '../components/TextftLink';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function LoginPage() {
-  const navigate = useNavigate();
+
+    const navigate = useNavigate();
   return (
     <div className='flex'>
         <div className='w-[600px] flex flex-col py-10 bg-[#F8F8F8]'>
@@ -17,9 +19,10 @@ export default function LoginPage() {
 
               <InputBox text="Email" placeholder="Email" />
               <InputBox text="Password" placeholder="********" hide={true} />
+              <InputBox text="Confirm Password" placeholder="********" hide={true} />
 
               </div>
-                <AccentButton text="Login" onClick="" />
+                <AccentButton text="Register" onClick="" />
 
                 <div className='h-[1.5px] w-72 m-auto relative bg-[#808080]'>
                   <h1 className='font-noto relative left-[46%] text-[#808080] w-6 text-center bg-[#F8F8F8]  -top-3'>
@@ -29,7 +32,7 @@ export default function LoginPage() {
 
                 <ContinueWithGooglebtn />
 
-                <TextftLink text="Don't have an account?" link="Register" onClick={()=>navigate("/register")} />
+                <TextftLink text="Already have an account?" link="Login" onClick={()=>navigate("/login")} />
             </div>
 
         </div>
