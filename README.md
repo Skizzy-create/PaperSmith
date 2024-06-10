@@ -54,7 +54,7 @@ Before you begin, make sure you have the following 💻:
      {
          "message": "User created successfully",
          "_id": "6666f4bc062cdea070fdf0af",
-         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.          eyJpZCI6IjY2NjZmNGJjMDYyY2RlYTA3MGZkZjBhZiIsImVtYWlsIjoiZXhhbXBsZUBnbWFpbC5jb20iLCJpYXQiOjE3MTgwMjMzNTZ9.QiIcomdH8VhY6rlKuynBLmSM-KcHNMfPIVMBx7zy-Rg"
+         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjZmNGJjMDYyY2RlYTA3MGZkZjBhZiIsImVtYWlsIjoiZXhhbXBsZUBnbWFpbC5jb20iLCJpYXQiOjE3MTgwMjMzNTZ9.QiIcomdH8VhY6rlKuynBLmSM-KcHNMfPIVMBx7zy-Rg"
       }
      ```
    
