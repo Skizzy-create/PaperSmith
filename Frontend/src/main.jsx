@@ -4,13 +4,19 @@ import { BrowserRouter, Navigate, Route, RouterProvider, createBrowserRouter, cr
 import './index.css'
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/Registerpage';
+import HomePage from './pages/HomePage';
+import DashBoardLayout from './layouts/DashBoardLayout';
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' >
-      <Route path='login' element={<LoginPage/>} /> 
+    <Route path='/'>
+      <Route index path='login' element={<LoginPage/>} /> 
       <Route path='register' element={<RegisterPage />} />
+      <Route path='aa' element={<DashBoardLayout />}>
+      <Route path='h' element={<HomePage />} />
+
+      </Route>
       
     </Route>
   )
