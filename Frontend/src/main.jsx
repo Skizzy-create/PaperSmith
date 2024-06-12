@@ -11,7 +11,7 @@ import DashBoardLayout from './layouts/DashBoardLayout';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/'>
-      <Route index path='login' element={<LoginPage/>} /> 
+      <Route index path='/' element={<LoginPage/>} /> 
       <Route path='register' element={<RegisterPage />} />
       <Route path='aa' element={<DashBoardLayout />}>
       <Route path='h' element={<HomePage />} />
