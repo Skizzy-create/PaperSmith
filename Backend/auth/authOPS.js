@@ -1,26 +1,34 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-// const JWT_SECRET = process.env.JWT_SECRET;
-const JWT_SECRET = "TempSecretBecasuse the .env is not working "; // for testing purposes
+const JWT_SECRET = process.env.JWT_SECRET || "TemoSecret if .env not found";
 
 require('dotenv').config();
 
 // JWT token generation and verification functions
 /**
- * Generates a token for the given user.
+ * Generates a JWT token for the given user and sets it as an HTTP-only cookie.
  *
- * @param {Object} user - The user object.
- * @param {string} user._id - The ID of the user.
- * @param {string} user.email - The email of the user.
- * @returns {string} The generated token.
+ * @param {Object} user - The user object with _id and email properties.
+ * @param {Object} res - The response object from Express.js.
  */
-function generateToken(user) {
-    const payload = {
-        id: user._id,
-        email: user.email,
+function generateToken(user, res) {
+    try {
+        const payload = {
+            id: user._id,
+            email: user.email,
+        }
+        const token = jwt.sign(payload, JWT_SECRET);
+        res.cookie("token", token, {
+            httpOnly: true,
+            sameSite: "strict",
+            secure: true,
+        });
+        console.log("Token generated successfully");
+        return true;
+    } catch (err) {
+        console.error("Error generating JWT:", "\n", err);
+        return false;
     }
-    const token = jwt.sign(payload, JWT_SECRET);
-    return token;
 };
 
 /**
