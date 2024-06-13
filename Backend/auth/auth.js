@@ -1,8 +1,8 @@
-const { verifyToken } = require("./authOPS");
+const { verifyToken } = require("./authOps");
 
 // Middleware function to authenticate the token in the request headers.
 function authenticateToken(req, res, next) {
-    const token = req.headers.authorization;
+    const token = req.cookies.token;;
     console.log("Token", token);
     if (!token) {
         return res.status(401).json({

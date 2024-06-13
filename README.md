@@ -1,4 +1,3 @@
-
 # 🚀 Welcome to PaperSmith! 🎉
 
 ## 📚 Project Overview
@@ -53,8 +52,7 @@ Before you begin, make sure you have the following 💻:
      ```json
      {
          "message": "User created successfully",
-         "_id": "6666f4bc062cdea070fdf0af",
-         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjZmNGJjMDYyY2RlYTA3MGZkZjBhZiIsImVtYWlsIjoiZXhhbXBsZUBnbWFpbC5jb20iLCJpYXQiOjE3MTgwMjMzNTZ9.QiIcomdH8VhY6rlKuynBLmSM-KcHNMfPIVMBx7zy-Rg"
+         "_id": "6666f4bc062cdea070fdf0af"
       }
      ```
    
@@ -71,10 +69,12 @@ Before you begin, make sure you have the following 💻:
       Return Body:
      ```json
      {
-         "msg": "Login successful",
-         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjZlZjYzMDAwZWQxODUxNzcxYTRhMSIsImVtYWlsIjoiYXNsaWFrYXJ0aWtAZ21haWwuY29tIiwiaWF0IjoxNzE4MDIyMjAwfQ.uV-mMioZmowRRUxQt2ZxHxP508A047AKFsX3jPKXL2U"
+         "msg": "Login successful"
       }
      ```
+
+## 🍪 Cookie-based Authentication
+In PaperSmith, we prioritize security and user experience. That's why we use HTTP-only cookies for authentication. When you log in, the server will set a secure HTTP-only cookie with your JWT token. This means you don't have to manually include the JWT token in the headers of your requests. The browser will automatically include the cookie in every request to the server. This makes your requests cleaner and your authentication process more secure.
 
 We hope you enjoy using PaperSmith! 🎉
 
