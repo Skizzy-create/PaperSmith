@@ -1,13 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react';
 import PaperSmithLogo from '../assets/Logo.svg';
 import InputBox from '../components/InputBox';
 import AccentButton from '../components/AccentButton';
 import ContinueWithGooglebtn from '../components/ContinueWithGooglebtn';
 import TextftLink from '../components/TextftLink';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  async function handleLogin () {
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/user/login',
+        { email, password },
+        { withCredentials: true } // Include cookies in the request
+      );
+
+      if (response.data.validation !== true) {
+        throw new Error('Login failed');
+      }
+
+      console.log('Login successful!');
+      navigate('/aa/h'); // Navigate after successful login
+    } catch (err) {
+      setError(err.message);
+      console.log(err);
+    }
+  };
+
   return (
     <div className='flex'>
       <div className='w-[600px] flex flex-col py-10 bg-[#F8F8F8]'>
@@ -30,5 +55,5 @@ export default function LoginPage() {
       </div>
       <div className="w-full h-[100vh] bg-[#5278FF] bg-[length:1000px_750px] bg-no-repeat bg-center bg-[url('./assets/LoginHero.png')]"></div>
     </div>
-  )
+  );
 }
