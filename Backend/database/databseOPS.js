@@ -12,7 +12,7 @@ async function connectDB(CONN_STRING) {
 }
 
 const UserDataSchema = new mongoose.Schema({
-    Credits: { type: Number, default: 0 },
+    Credits: { type: Number, default: 100 },
     Premium: { type: Boolean, default: false },
     NoOfPapers: { type: Number, default: 0 },
 });
