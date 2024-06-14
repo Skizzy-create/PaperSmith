@@ -3,10 +3,12 @@ import AccentButton from './AccentButton'
 import SmallButton from './SmallButton'
 import { Album, Coins, GalleryVerticalEnd, SquareCheck,  Star } from 'lucide-react'
 import SmallOptionBtn from './SmallOptionBtn'
-import GridandList from './GridandList'
+import GridandList from './GridAndList/GridandList'
 
-export default function Navbar() {
-
+export default function Navbar({setGridListState}) {
+  const handleGridListState = (newState) =>{
+    setGridListState(newState);
+  }
   const [index, setIndex] = useState(0);
 
   return (
@@ -51,7 +53,7 @@ export default function Navbar() {
 
       </div>
 
-      <GridandList />
+      <GridandList onchng={handleGridListState} />
 
       </div>
 

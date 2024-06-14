@@ -33,7 +33,7 @@ export default function LoginPage() {
 
                 <ContinueWithGooglebtn />
 
-                <TextftLink text="Already have an account?" link="Login" onClick={()=>navigate("/login")} />
+                <TextftLink text="Already have an account?" link="Login" onClick={()=>navigate("/")} />
             </div>
 
         </div>

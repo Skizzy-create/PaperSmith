@@ -7,7 +7,6 @@ import RegisterPage from './pages/Registerpage';
 import HomePage from './pages/HomePage';
 import DashBoardLayout from './layouts/DashBoardLayout';
 
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/'>
@@ -22,9 +21,14 @@ const router = createBrowserRouter(
   )
 );
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+async function deferRender(){
+  const {worker} = await import("./Mocks/Browser.js");
+  return worker.start();
+}
+
+
+deferRender().then(()=>{
+  ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   
-  </React.StrictMode>,
 )
