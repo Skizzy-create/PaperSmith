@@ -2,9 +2,17 @@ import React, { useState } from "react";
 import PaperSmithLogo from "../assets/Logo.svg";
 import { Home, Trash, Plus } from "lucide-react";
 import Info from "./InfoBox/Info";
+import { useNavigate } from "react-router-dom";
 
-export default function () {
+export default function Sidebar ({ModalState}) {
+  
   const [index, setIndex] = useState(0);
+
+  const onclickhandle = ()=>{
+    ModalState(true);
+
+  }
+ 
   return (
     <div className="bg-white border border-black border-opacity-10 rounded-lg mt-1 h-[99vh] flex flex-col ml-2 w-64 justify-between">
       <div className="flex flex-col">
@@ -43,7 +51,7 @@ export default function () {
             </h1>
             <div
               className="bg-white  text-gray-400 border border-black border-opacity-10 rounded-full w-4 h-4 hover:cursor-pointer"
-              onClick=""
+              onClick={onclickhandle}
             >
               <Plus size={"12px"} className="mx-auto my-[1.5px] " />
             </div>

@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        noto:["Noto Sans"]
+        noto:["Noto Sans"],
+        rozha:["Rozha one"]
       }
     },
   },

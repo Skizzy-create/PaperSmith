@@ -1,8 +1,10 @@
 import React from "react";
 import UpgradePlan from "./UpgradePlan";
 import { LogOut, Settings } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function () {
+  const navigation = useNavigate();
   return (
     <div className="bg-[#EFEFEF] w-60 mx-auto h-40 flex flex-col gap-4 p-3 rounded-md ">
       <div className="flex items-center gap-2 ">
@@ -28,7 +30,7 @@ export default function () {
           <h1>Settings</h1>
         </div>
 
-        <div className="flex font-noto text-gray-400 gap-2 text-sm items-center justify-center rounded-sm w-28 h-6 hover:bg-gray-200 hover:cursor-pointer active:bg-gray-300">
+        <div className="flex font-noto text-gray-400 gap-2 text-sm items-center justify-center rounded-sm w-28 h-6 hover:bg-gray-200 hover:cursor-pointer active:bg-gray-300" onClick={()=>navigation('/')}>
           <LogOut size={"16px"} />
 
           <h1>logout</h1>

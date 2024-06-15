@@ -4,6 +4,7 @@ import SmallButton from './SmallButton'
 import { Album, Coins, GalleryVerticalEnd, SquareCheck,  Star } from 'lucide-react'
 import SmallOptionBtn from './SmallOptionBtn'
 import GridandList from './GridAndList/GridandList'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar({setGridListState}) {
   const handleGridListState = (newState) =>{
@@ -11,11 +12,13 @@ export default function Navbar({setGridListState}) {
   }
   const [index, setIndex] = useState(0);
 
+  const navigation = useNavigate();
+
   return (
     <div className='flex flex-col w-[100wh] p-10 font-noto gap-4'>
       <div className='flex justify-between'>
         <div className='flex gap-3'>
-            <SmallButton text="Create paper" />
+            <SmallButton text="Create paper"  onClick={()=>navigation('/Create')} />
             <SmallOptionBtn />
         </div>
 

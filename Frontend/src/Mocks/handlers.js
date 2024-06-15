@@ -22,7 +22,8 @@ export const handlers = [
         lastViewed: "24 jan 1993",
         path: "",
         tags: [],
-      }
+      },
+      
     ]);
   }),
 ];
