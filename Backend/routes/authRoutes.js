@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { hashedPassword, generateToken, checkPassword } = require("../auth/authOps");
+const { hashedPassword, generateToken, checkPassword } = require("../auth/authOPS");
 const { validateUserSignup, validateUserLogin } = require("../middlewares/validators");
 const { User, UserDataSchema } = require("../database/databseOPS");
 

@@ -38,8 +38,11 @@ Before you begin, make sure you have the following 💻:
 
 ## 🌐 API Routes
 
+### User Routes
+
 1. **User Signup**: Route to create users for the first time.
    - Route: `http://localhost:3000/user/signup`
+   - Method: `POST`
    - Request Body:
      ```json
      {
@@ -48,17 +51,17 @@ Before you begin, make sure you have the following 💻:
          "password": "example@321"
      }
      ```
-     Return Body:
+   - Response:
      ```json
      {
          "message": "User created successfully",
          "_id": "6666f4bc062cdea070fdf0af"
-      }
+     }
      ```
-   
 
 2. **User Login**: Route to login users.
    - Route: `http://localhost:3000/user/login`
+   - Method: `POST`
    - Request Body:
      ```json
      {
@@ -66,11 +69,95 @@ Before you begin, make sure you have the following 💻:
          "password": "example@321"
      }
      ```
-      Return Body:
+   - Response:
      ```json
      {
          "msg": "Login successful"
-      }
+     }
+     ```
+
+### Favourite Routes
+
+3. **Add to Favourites**: Route to add a paper to favourites.
+   - Route: `http://localhost:3000/favourite/:id`
+   - Method: `GET`
+   - Requires Authentication: Yes
+   - Response:
+     ```json
+     {
+         "message": "Added to favourites successfully",
+         "paperId": "1234567890"
+     }
+     ```
+
+### Trash Routes
+
+4. **Send to Trash**: Route to move a paper to trash.
+   - Route: `http://localhost:3000/sendTrash/:id`
+   - Method: `GET`
+   - Requires Authentication: Yes
+   - Response:
+     ```json
+     {
+         "message": "Paper moved to trash successfully",
+         "paperId": "1234567890"
+     }
+     ```
+
+5. **Fetch All Trash**: Route to fetch all trashed papers.
+   - Route: `http://localhost:3000/trash/:userId`
+   - Method: `GET`
+   - Requires Authentication: Yes
+   - Response:
+     ```json
+     {
+         "message": "Fetched all trashed papers",
+         "trashedPapers": [
+             {
+                 "id": "1234567890",
+                 "title": "Sample Paper"
+             },
+             
+         ]
+     }
+     ```
+
+### Folder Routes
+
+6. **Add Folder**: Route to add a new folder.
+   - Route: `http://localhost:3000/folders/addF`
+   - Method: `PUT`
+   - Requires Authentication: Yes
+   - Request Body:
+     ```json
+     {
+         "folderName": "New Folder"
+     }
+     ```
+   - Response:
+     ```json
+     {
+         "message": "Folder added successfully",
+         "folderId": "abcdef123456"
+     }
+     ```
+
+7. **Get All Folders**: Route to get all folders.
+   - Route: `http://localhost:3000/folders/getF`
+   - Method: `GET`
+   - Requires Authentication: Yes
+   - Response:
+     ```json
+     {
+         "message": "Fetched all folders",
+         "folders": [
+             {
+                 "id": "abcdef123456",
+                 "name": "New Folder"
+             },
+             ...
+         ]
+     }
      ```
 
 ## 🍪 Cookie-based Authentication
@@ -79,5 +166,6 @@ In PaperSmith, we prioritize security and user experience. That's why we use HTT
 We hope you enjoy using PaperSmith! 🎉
 
 ---
+
 🚧 **A Note from the Developer:**
 Thank you for exploring **PaperSmith**, our AI-powered question paper generator! 🎓📝 This project is currently under active development. We're constantly working on enhancing features, fixing bugs, and improving the overall user experience. Your feedback and support are invaluable as we strive to make PaperSmith even better. Stay tuned for updates, and thank you for being part of our journey! 🌟
