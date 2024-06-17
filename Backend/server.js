@@ -1,16 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { countTime, countRequests } = require('./middlewares/logs.');
-const authRoutes = require("./routes/authRoutes");
+const cookieParser = require('cookie-parser');
+const { countTime, countRequests } = require('./middlewares/logs');
+const authRoutes = require('./routes/authRoutes');
+const paperRoutes = require('./routes/paperRoutes');
+const folderRoutes = require('./routes/folderRoutes');
 const { connectDB } = require('./database/databseOPS');
+const cors = require('cors');
 require('dotenv').config();
-cors = require('cors');
-
 
 const app = express();
 const port = 3000;
 
-//connecting to the database
+// Connecting to the database
 const connectDBWithRetry = () => {
     connectDB(process.env.MONGOOSE_CONNECTION_STRING)
         .then(() => {
@@ -24,21 +26,22 @@ const connectDBWithRetry = () => {
 
 connectDBWithRetry();
 
-
 // Middleware
 app.use(cors({
     origin: 'http://localhost:5173', // Allow requests from this origin
     credentials: true // Allow cookies to be sent
 }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(countTime);
 app.use(countRequests);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-// different routes
+// Different routes
 app.use('/user', authRoutes);
+app.use('/paper', paperRoutes);
+app.use('/folder', folderRoutes);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
@@ -46,10 +49,10 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    console.log("Houme Route")
-    res.status(200).json({ 'msg': "Home Page" })
+    console.log("Home Route");
+    res.status(200).json({ 'msg': "Home Page" });
 });
 
 app.listen(port, () => {
-    console.log(`Sever running on https://localhost:${port}`);
+    console.log(`Server running on https://localhost:${port}`);
 });
