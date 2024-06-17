@@ -155,7 +155,6 @@ Before you begin, make sure you have the following 💻:
                  "id": "abcdef123456",
                  "name": "New Folder"
              },
-             ...
          ]
      }
      ```
