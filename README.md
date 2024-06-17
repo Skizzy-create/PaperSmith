@@ -117,7 +117,7 @@ Before you begin, make sure you have the following 💻:
                  "id": "1234567890",
                  "title": "Sample Paper"
              },
-             ...
+             
          ]
      }
      ```

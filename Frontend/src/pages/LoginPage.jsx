@@ -43,7 +43,7 @@ export default function LoginPage() {
             <InputBox text="Password" placeholder="********" hide={true} onChange={(e) => setPassword(e.target.value)} />
           </div>
           <AccentButton text="Login" onClick={handleLogin} />
-          {error && <div className="text-red-500">{error}</div>}
+          {/* {error && <div className="text-red-500">{error}</div>} */}
           <div className='h-[1.5px] w-72 m-auto relative bg-[#808080]'>
             <h1 className='font-noto relative left-[46%] text-[#808080] w-6 text-center bg-[#F8F8F8] -top-3'>
               or
