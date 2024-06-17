@@ -1,13 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const { countTime, countRequests } = require('./middlewares/logs');
-const authRoutes = require('./routes/authRoutes');
-const paperRoutes = require('./routes/paperRoutes');
+const { countTime, countRequests } = require('./middlewares/logs.')
+const authRoutes = require('./routes/authRoutes')
+const paperRoutes = require('./routes/paperRoute');
 const folderRoutes = require('./routes/folderRoutes');
 const { connectDB } = require('./database/databseOPS');
 const cors = require('cors');
 require('dotenv').config();
+
 
 const app = express();
 const port = 3000;
