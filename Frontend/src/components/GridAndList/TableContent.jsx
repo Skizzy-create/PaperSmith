@@ -1,5 +1,6 @@
 import { EllipsisVertical, Star } from "lucide-react";
 import React from "react";
+import OptionsDropDown from "./OptionsDropDown";
 
 export default function TableContent({
   title = "untilted",
@@ -19,7 +20,7 @@ export default function TableContent({
         <h1 className="basis-1/4">{lastView}</h1>
       </div>
 
-      <EllipsisVertical />
+      <OptionsDropDown />
     </div>
   );
 }

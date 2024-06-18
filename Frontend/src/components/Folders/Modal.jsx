@@ -1,7 +1,7 @@
 import React from "react";
-import InputBox from "./InputBox";
-import AccentButton from "./AccentButton";
-import SmallButton from "./SmallButton";
+import InputBox from "../InputBox";
+import AccentButton from "../AccentButton";
+import SmallButton from "../SmallButton";
 
 export default function Modal() {
   return (

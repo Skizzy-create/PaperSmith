@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
-import Backdrop from "../components/Backdrop";
-import Modal from "../components/Modal";
+import Backdrop from "../components/Folders/Backdrop";
+import Modal from "../components/Folders/Modal";
 
 export default function DashBoardLayout() {
   const [ModalShow , SetModalShow] = useState(false);
