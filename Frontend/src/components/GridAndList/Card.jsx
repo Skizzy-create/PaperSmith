@@ -2,9 +2,11 @@ import { EllipsisVertical, Plus, Star } from "lucide-react";
 import React, { useState } from "react";
 import Tag from "./Tag";
 import OptionsDrowDown from "./OptionsDropDown"
+import { useNavigate } from "react-router-dom";
 /* Card component to show  */
 export default function Card({ title = "Untitled ", btn = false }) {
   const [FavStatus , setFavStatus] = useState(false);
+  const navigation = useNavigate();
 
   const onFavhandle = ()=>{
     setFavStatus(!FavStatus);
@@ -27,7 +29,7 @@ export default function Card({ title = "Untitled ", btn = false }) {
       </div>
     </div>
   ) : (
-    <div className="w-56 h-56 rounded-xl border shadow-md relative z-0 border-black border-opacity-10 rounded-sm bg-white flex flex-col gap-2 justify-center items-center ">
+    <div className="w-56 h-56 rounded-xl border shadow-md relative z-0 hover:cursor-pointer border-black border-opacity-10 rounded-sm bg-white flex flex-col gap-2 justify-center items-center " onClick={()=>navigation("/Create")}>
       <Plus className="size-10 text-[#5278FF]" />
       <h1 className="font-noto">Create New Paper</h1>
     </div>

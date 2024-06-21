@@ -33,13 +33,11 @@ export default function CreateOption() {
   };
 
   const onAdd = (e) => {
-    if(validation()){
+    if (validation()) {
       Setrows([...rows, { id: rows.length + 1 }]);
+    } else {
+      alert("Enter prev section field to proceed");
     }
-    else{
-      alert("Enter prev section field to proceed")
-    }
-  
   };
 
   const onMinus = (e) => {
@@ -55,16 +53,16 @@ export default function CreateOption() {
     console.log(NewFormData);
   };
 
-  const validation = () =>{
+  const validation = () => {
     for (let key in FormData) {
-      const {Questions, NumberOfQuestion} = FormData[key];
-      if (!Questions || !NumberOfQuestion ){
-        return false
-      } 
+      const { Questions, NumberOfQuestion } = FormData[key];
+      if (!Questions || !NumberOfQuestion) {
+        return false;
+      }
     }
 
-    return true
-  }
+    return true;
+  };
 
   useEffect(() => {
     if (visible) {
@@ -82,7 +80,7 @@ export default function CreateOption() {
     <div className="w-[100wh] bg-[#F8F8F8] h-[100vh] flex flex-col gap-12 p-12">
       <div
         className="flex w-24 rounded-md justify-center hover:cursor-pointer  py-1 text-white font-noto gap-2 items-center bg-[#5278FF]"
-        onClick={()=> navigation(-1)}
+        onClick={() => navigation(-1)}
       >
         <ArrowBigLeft size={16} />
         back

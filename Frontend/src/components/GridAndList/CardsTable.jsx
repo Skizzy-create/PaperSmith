@@ -13,7 +13,7 @@ export default function CardsTable() {
       .catch((e) => {
         console.log(e);
       });
-  });
+  }, []);
 
   console.log(cardsData);
 
