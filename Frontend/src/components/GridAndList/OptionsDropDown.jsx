@@ -13,7 +13,7 @@ import axios from "axios";
 export default function OptionsDropDown() {
   const [Visible, SetVisible] = useState(false);
   const [FolderList, setFolderList] = useState([]);
-  const [Postion , setPostion] = useState(false)
+  const [Postion, setPostion] = useState(false);
   const menuref = useRef(null);
   const buttonref = useRef(null);
   const FolderShowref = useRef(null);
@@ -33,13 +33,11 @@ export default function OptionsDropDown() {
   };
 
   const getLocation = () => {
-    if (menuref.current) {      const rect = menuref.current.getBoundingClientRect();
+    if (menuref.current) {
+      const rect = menuref.current.getBoundingClientRect();
       const overflow = rect.right > window.innerWidth;
       if (overflow) {
         setPostion(true);
-      }
-      else{
-        setPostion(false);
       }
     }
   };
@@ -77,7 +75,9 @@ export default function OptionsDropDown() {
       />
       {Visible && (
         <div
-          className={`absolute bg-white rounded-md ${Postion ? 'right-full' : ''}  shadow-md border-black border-opacity-10 `}
+          className={`absolute bg-white rounded-md ${
+            Postion ? "right-full" : ""
+          }  shadow-md border-black border-opacity-10 `}
           ref={menuref}
         >
           <ul className="py-2 px-2  flex flex-col ">
@@ -101,7 +101,9 @@ export default function OptionsDropDown() {
                   <Folder className="size-3" />
                   Move to Folder
                   <ui
-                    className={`absolute hidden flex flex-col group-hover:block px-2 ${Postion ?'right-full' : 'left-full'} border-black border-opacity-10 w-28 gap-4 shadow-sm rounded-sm py-2 bg-white `}
+                    className={`absolute hidden flex flex-col group-hover:block px-2 ${
+                      Postion ? "right-full" : "left-full"
+                    } border-black border-opacity-10 w-28 gap-4 shadow-sm rounded-sm py-2 bg-white `}
                   >
                     {FolderList.map((folders) => (
                       <Folders name={folders.title} />

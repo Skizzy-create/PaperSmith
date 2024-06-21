@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/Registerpage";
 import HomePage from "./pages/HomePage";
 import DashBoardLayout from "./layouts/DashBoardLayout";
+import Create from "./pages/Create.jsx";
 import CreateOption from "./pages/CreateOption.jsx";
 
 const router = createBrowserRouter(
@@ -23,7 +24,8 @@ const router = createBrowserRouter(
       <Route path="aa" element={<DashBoardLayout />}>
         <Route path="h" element={<HomePage />} />
       </Route>
-      <Route path="create" element={<CreateOption />} />
+      <Route path="create" element={<Create />} />
+      <Route path="/create/options" element={<CreateOption />} />
     </Route>
   )
 );

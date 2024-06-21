@@ -14,7 +14,7 @@ export default function LoginPage() {
     <div className='flex'>
         <div className='w-[600px] flex flex-col py-10 bg-[#F8F8F8]'>
             <img src={PaperSmithLogo} className='w-auto h-8' />
-            <div className='mt-20 flex flex-col gap-6 '>
+            <div className='mt-20 flex flex-col gap-6 px-16 '>
               <div className='flex flex-col gap-2'>
 
               <InputBox text="Email" placeholder="Email" />

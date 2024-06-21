@@ -15,11 +15,11 @@ export default function Navbar({setGridListState}) {
   const navigation = useNavigate();
 
   return (
-    <div className='flex flex-col w-[100wh] p-10 font-noto gap-4'>
+    <div className='flex flex-col w-[100wh] px-10  pt-10 font-noto gap-4'>
       <div className='flex justify-between'>
         <div className='flex gap-3'>
             <SmallButton text="Create paper"  onClick={()=>navigation('/Create')} />
-            <SmallOptionBtn />
+            {/* <SmallOptionBtn /> */}
         </div>
 
         <div className='flex text-gray-400 items-center gap-2'>

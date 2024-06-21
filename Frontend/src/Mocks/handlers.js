@@ -11,7 +11,7 @@ export const handlers = [
         CreatedOn: "24 jan 1993 ",
         lastViewed: "24 jan 1993",
         path: "",
-        tags: [],
+        tag: "Only Theory",
       },
       {
         id: 2,
@@ -21,43 +21,10 @@ export const handlers = [
         CreatedOn: "25 jan 1993 ",
         lastViewed: "24 jan 1993",
         path: "",
-        tags: [],
+        tags: "Only Mcq",
       },
 
-      {
-        id: 3,
-        fav: false,
-        title: " Semester 2 Oops concept",
-        folder: "None",
-        CreatedOn: "25 jan 1993 ",
-        lastViewed: "24 jan 1993",
-        path: "",
-        tags: [],
-      },
-
-      {
-        id: 4,
-        fav: false,
-        title: " Semester 2 Oops concept",
-        folder: "None",
-        CreatedOn: "25 jan 1993 ",
-        lastViewed: "24 jan 1993",
-        path: "",
-        tags: [],
-      },
-
-      {
-        id: 5,
-        fav: false,
-        title: " Semester 2 Oops concept",
-        folder: "None",
-        CreatedOn: "25 jan 1993 ",
-        lastViewed: "24 jan 1993",
-        path: "",
-        tags: [],
-      },
-
-
+   
 
 
       

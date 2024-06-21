@@ -4,11 +4,10 @@ import React, { useState } from "react";
 export default function GridandList({ onchng }) {
   const [index, setIndex] = useState(0);
 
-  const onHandleClick = (newIndex)=>{
+  const onHandleClick = (newIndex) => {
     setIndex(newIndex);
     onchng(newIndex);
-
-  }
+  };
   return (
     <div className="flex bg-gray-200 rounded-sm gap-2  py-1 px-[6px] rounded-md">
       <div
@@ -16,7 +15,7 @@ export default function GridandList({ onchng }) {
           index == 0
             ? "bg-white px-2  rounded-sm text-[#5278FF]"
             : "px-2  text-gray-400"
-        } `}
+        } `}z
         onClick={() => onHandleClick(0)}
       >
         <LayoutGrid size={"16px"} />

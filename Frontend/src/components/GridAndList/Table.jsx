@@ -12,7 +12,7 @@ export default function Table() {
         setTableData(response.data);
       })
       .catch((e) => console.log(e));
-  }, []);
+  });
   return (
     <div className="flex flex-col gap-3 w-full ">
       <div className="flex  font-bold px-6">

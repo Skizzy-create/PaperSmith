@@ -10,7 +10,7 @@ export default function TableContent({
 }) {
   return (
     <div className="flex text-gray-400 text-lg gap-2 font-noto items-center w-full">
-      <Star size={"18px"} />
+      <Star size={"18px"}  />
 
       <div className="flex w-full  ">
         <h1 className="basis-1/4 line-clamp-1 ">{title}</h1>

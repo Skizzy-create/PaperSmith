@@ -9,8 +9,9 @@ export default function DashBoardLayout() {
   const [ModalShow , SetModalShow] = useState(false);
   const [GridAndListState, setGridAndListGate] = useState(0);
   return (
-    <div className="flex bg-[#F8F8F8] h-[100vh] overflow-hidden ">
+    <div className="flex bg-[#F8F8F8] h-[100vh] overflow-x-hidden ">
       <Sidebar ModalState={SetModalShow} />
+      <div className="w-80"></div>
       {ModalShow ?<div className="absolute flex  flex-col justify-center items-center w-full h-full">
       <Backdrop onClick={()=>SetModalShow(false)}/>
       <Modal/>
