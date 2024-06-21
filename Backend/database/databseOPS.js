@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { optional } = require('zod');
 
 async function connectDB(CONN_STRING) {
     try {
@@ -24,11 +25,37 @@ const UserSchema = new mongoose.Schema({
     userData: { type: UserDataSchema, } // Reference the UserDataSchema
 });
 
+const PaperSpecsSchema = new mongoose.Schema({
+    sections: { type: Number, default: 1 },
+    questions: { type: Number, default: 1 },
+    type: { type: String, default: "MCQ" },
+    optional: { type: Boolean, default: false },
+});
+
+const PaperSchema = new mongoose.Schema({
+    title: String,
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    createdAt: { type: Date, default: Date.now },
+    specs: { type: PaperSpecsSchema, default: {} },
+    favourite: { type: Boolean, default: false },
+    loaction: { type: String, default: 'null' },
+});
+
+const FolderNames = new mongoose.Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    // array of names of the folders
+    folders: { type: Array, default: [] }, // can we add new names to array and then remvoe it: yes, how 
+    // exapmle: 1. adding a new name of the server, :
+});
 
 const User = mongoose.model('User', UserSchema);
+const Paper = mongoose.model('Paper', PaperSchema);
+const Folder = mongoose.model('FolderNames', FolderNames);
 
 module.exports = {
     User,
     connectDB,
-    UserDataSchema
+    UserDataSchema,
+    Paper,
+    Folder,
 };
