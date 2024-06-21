@@ -57,10 +57,11 @@ export default function LoginPage() {
 
           <ContinueWithGooglebtn />
 
-          <TextftLink text="Already have an account?" link="Login" onClick={() => navigate("/login")} />
+                <TextftLink text="Already have an account?" link="Login" onClick={()=>navigate("/")} />
+            </div>
+
         </div>
-      </div>
-      <div className="w-full h-[100vh] bg-[#5278FF] bg-[length:1000px_750px] bg-no-repeat bg-center bg-[url('./assets/LoginHero.png')]"></div>
+        <div className="w-full h-[100vh] bg-[#5278FF] bg-[length:1000px_750px] bg-no-repeat bg-center bg-[url('./assets/LoginHero.png')]"></div>
     </div>
   );
 }
